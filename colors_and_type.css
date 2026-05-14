@@ -1,0 +1,274 @@
+/* ============================================================================
+   ALLASO RANCH — Design Tokens
+   Colors + Typography for the camp & retreat brand.
+   Based on Figma "Final Designs" (Feb 2026 concept), with the
+   warm-orange + cream palette and the Akira / Roboto Mono type system.
+   ============================================================================ */
+
+/* ---------- Fonts -------------------------------------------------------- */
+@font-face {
+  font-family: "Akira Expanded";
+  src: url("./fonts/AkiraExpanded-SuperBold.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("./fonts/RobotoMono.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("./fonts/RobotoMono-Italic.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Brand color: warm orange ---------------------------------- */
+  /* The single most important color. Used for primary buttons, hero
+     backgrounds, accent text, CTAs.                                       */
+  --color-brand:           rgb(227, 114, 43);   /* allaso orange */
+  --color-brand-hover:     rgb(208, 102, 36);   /* press / hover */
+  --color-brand-deep:      rgb(182,  83, 14);   /* deep variant */
+  --color-brand-dark:      rgb(96,  63, 40);    /* roasted, used for body copy on tan */
+  --color-brand-darker:    rgb(103, 57, 24);    /* near-black brown */
+  --color-brand-darkest:   rgb(90,  38, 27);    /* nearly black with red */
+
+  /* Brand tints (sand → cream, used as section backgrounds + tag fills) */
+  --color-tan-100:         rgb(249, 236, 227);  /* cream-tan section bg */
+  --color-tan-200:         rgb(246, 212, 178);  /* tag default fill */
+  --color-tan-50:          rgb(252, 245, 241);
+  --color-tan-25:          rgb(255, 251, 239);  /* canvas warm white */
+
+  /* ---------- Neutrals (cool gray scale from Figma) --------------------- */
+  --color-ink:             rgb(  3,   7,  18);  /* near-black headings */
+  --color-fg-1:            rgb(  3,   7,  18);
+  --color-fg-2:            rgb( 50,  49,  47);  /* warm dark */
+  --color-fg-3:            rgb( 75,  85,  99);  /* secondary body */
+  --color-fg-4:            rgb(107, 114, 128);  /* muted */
+  --color-fg-5:            rgb(156, 163, 175);  /* very muted */
+
+  --color-line:            rgb(229, 231, 235);
+  --color-line-strong:     rgb(209, 213, 219);
+  --color-line-soft:       rgb(243, 244, 246);
+
+  --color-bg-1:            rgb(255, 251, 239);  /* warm cream canvas */
+  --color-bg-2:            rgb(254, 252, 250);  /* off-white sections */
+  --color-bg-3:            rgb(246, 246, 246);  /* light gray section */
+  --color-bg-4:            rgb(249, 250, 251);
+  --color-paper:           rgb(255, 255, 255);
+
+  /* ---------- Semantic ---------------------------------------------------*/
+  --color-alert:           rgb(255,  66,  66);  /* red warning */
+  --color-info:            rgb( 93, 158, 234);  /* friendly blue */
+  --color-success:         rgb( 72,  98, 132);  /* (slate / pond blue, brand) */
+  --color-warning:         rgb(255, 189,   0);
+
+  /* Accent for camp variety badges (rarely used) */
+  --color-stone:           rgb(161, 161, 160);
+  --color-gold:            rgb(191, 169, 125);
+
+  /* ---------- Surfaces -------------------------------------------------- */
+  --surface-canvas:        var(--color-bg-1);
+  --surface-card:          var(--color-paper);
+  --surface-section-warm:  var(--color-tan-100);
+  --surface-section-cool:  var(--color-bg-3);
+  --surface-hero:          var(--color-brand);
+  --surface-overlay-dark:  rgba(0, 0, 0, 0.25);  /* glass nav overlay */
+  --surface-overlay-glass: rgba(255, 255, 255, 0.10);
+
+  /* ---------- Semantic text -------------------------------------------- */
+  --text-heading:          var(--color-ink);
+  --text-heading-on-tan:   var(--color-brand-dark);
+  --text-heading-on-brand: rgb(246, 246, 246);
+  --text-body:             var(--color-fg-3);
+  --text-muted:            var(--color-fg-4);
+  --text-on-brand:         rgb(246, 246, 246);
+  --text-link:             var(--color-brand);
+  --text-eyebrow:          var(--color-brand-dark);
+
+  /* ---------- Type families -------------------------------------------- */
+  --font-display: "Akira Expanded", "Anton", "Arial Black", system-ui, sans-serif;
+  --font-mono:    "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-body:    "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---------- Type scale -----------------------------------------------
+     The site is bilingual in scale: oversized Akira display for hero
+     section labels (the "ALLASO RANCH" wordmark, pill labels) — and a
+     comfortable 16/20px Roboto Mono for everything readable.            */
+  --fs-hero:        clamp(56px, 9vw, 120px); /* "ALLASO RANCH" wordmark */
+  --fs-display-1:   clamp(40px, 5vw,  72px); /* pill / section labels  */
+  --fs-display-2:   60px;
+  --fs-h1:          48px;
+  --fs-h2:          36px;
+  --fs-h3:          28px;
+  --fs-h4:          24px;
+  --fs-eyebrow:     20px;
+  --fs-lg:          20px;
+  --fs-md:          18px;
+  --fs-base:        16px;
+  --fs-sm:          14px;
+  --fs-xs:          12px;
+
+  --lh-tight:       0.85;
+  --lh-snug:        1.1;
+  --lh-base:        1.4;     /* the canonical line-height across the system */
+  --lh-loose:       1.6;
+
+  --tracking-display: 0.06em;  /* generous letter spacing on the wordmark */
+  --tracking-eyebrow: 0.03em;  /* monospaced eyebrows */
+  --tracking-base:    0em;
+
+  /* ---------- Radius --------------------------------------------------- */
+  --radius-xs:      6px;    /* image cards */
+  --radius-sm:      10px;   /* small chips / icon pills */
+  --radius-md:      12px;   /* buttons, container chips */
+  --radius-lg:      20px;   /* glass nav, hero containers */
+  --radius-xl:      40px;   /* image-card + tag stacks */
+  --radius-pill:    1000px; /* every tag, every label */
+
+  /* ---------- Spacing scale (8-point) ---------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 120px;
+
+  /* ---------- Shadow / elevation --------------------------------------- */
+  --shadow-card:    0 2px 4px rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.06);
+  --shadow-pop:     4px 4px 4px rgba(0,0,0,0.10);
+  --shadow-overlay: 0 8px 32px rgba(0,0,0,0.25);
+
+  /* ---------- Effects --------------------------------------------------- */
+  --blur-glass:     blur(20px);
+  --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:  150ms;
+  --duration-base:  250ms;
+  --duration-slow:  400ms;
+}
+
+/* ============================================================================
+   Semantic typography classes — these are the recommended way to use type.
+   ============================================================================ */
+.t-hero {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-on-brand);
+  text-transform: uppercase;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display-1);
+  line-height: var(--lh-snug);
+  letter-spacing: 0;
+  color: var(--text-heading);
+}
+
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-base);
+  color: var(--text-heading);
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-base);
+  color: var(--text-heading);
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-base);
+  color: var(--text-heading);
+}
+
+.t-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-eyebrow);
+  line-height: var(--lh-base);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--text-eyebrow);
+  text-transform: none;
+}
+
+.t-eyebrow-sm {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--text-eyebrow);
+  text-transform: uppercase;
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--text-body);
+}
+
+.t-body-lg {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-base);
+  color: var(--text-body);
+}
+
+.t-cta {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  text-align: center;
+  color: var(--text-on-brand);
+}
+
+.t-tag {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  line-height: 1;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: none;
+  color: var(--color-ink);
+}
+
+.t-nav {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--text-on-brand);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+}
